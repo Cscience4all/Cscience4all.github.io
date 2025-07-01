@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2a7baa 0%, #66d1ea 100%);
             min-height: 100vh;
             color: #333;
         }
@@ -82,13 +82,13 @@
 
         .forms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-bottom: 50px;
         }
 
         .form-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(197, 226, 243, 0.95);
             border-radius: 15px;
             padding: 40px 30px;
             text-align: center;
@@ -139,7 +139,7 @@
         }
 
         .downloads-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(197, 226, 243, 0.95);
             border-radius: 15px;
             padding: 40px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -162,18 +162,37 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background: #667eea;
+            background: linear-gradient(120deg, #2a7baa 0%, #66d1ea 100%);
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(.4,2,.6,1);
+            box-shadow: 0 5px 18px rgba(44,62,80,0.10);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.01) 100%);
+            transform: skewX(-20deg);
+            transition: left 0.5s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+            opacity: 0.7;
+            pointer-events: none;
         }
 
         .download-link:hover {
-            background: #5a6fd8;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(120deg, #66d1ea 0%, #2a7baa 100%);
+            transform: translateY(-4px) scale(1.025);
+            box-shadow: 0 10px 32px rgba(44,62,80,0.18);
+        }
+        .download-link:hover::after {
+            left: 120%;
+            opacity: 1;
         }
 
         .download-icon {
@@ -199,15 +218,12 @@
             .banner h1 {
                 font-size: 2rem;
             }
-            
             .banner p {
                 font-size: 1rem;
             }
-            
             .section-title {
                 font-size: 2rem;
             }
-            
             .forms-grid {
                 grid-template-columns: 1fr;
             }
@@ -220,7 +236,7 @@
         <div class="banner">
             <div class="banner-content">
                 <h1>Cscience4all</h1>
-                <p>Welcome to our research platform</p>
+                <p>Welcome to our data collection platform</p>
             </div>
         </div>
 
@@ -228,27 +244,27 @@
         <div class="forms-section">
             <h2 class="section-title">Research Forms</h2>
             <div class="forms-grid">
-                <a href="#" class="form-card" id="form1">
-                    <div class="form-icon">📋</div>
-                    <h3>Survey Form 1</h3>
+                <a href="https://tinyurl.com/mtf9tmvm" class="form-card" id="form1" target="_blank" rel="noopener">
+                    <div class="form-icon">📝</div>
+                    <h3>Climate Fish (EN)</h3>
                     <p>Complete our first research survey to contribute to our study.</p>
                 </a>
                 
-                <a href="#" class="form-card" id="form2">
-                    <div class="form-icon">📊</div>
-                    <h3>Data Collection Form</h3>
+                <a href="https://tinyurl.com/yb5tjf4h" class="form-card" id="form2" target="_blank" rel="noopener">
+                    <div class="form-icon">📝</div>
+                    <h3>Climate Fish (GR)</h3>
                     <p>Help us gather important data for our research project.</p>
                 </a>
                 
-                <a href="#" class="form-card" id="form3">
-                    <div class="form-icon">🔬</div>
-                    <h3>Experiment Feedback</h3>
+                <a href="https://tinyurl.com/568hdmcr" class="form-card" id="form3" target="_blank" rel="noopener">
+                    <div class="form-icon">📝</div>
+                    <h3>Reef Check (EN)</h3>
                     <p>Share your feedback on our latest experimental procedures.</p>
                 </a>
                 
-                <a href="#" class="form-card" id="form4">
+                <a href="https://tinyurl.com/568bux5b" class="form-card" id="form4" target="_blank" rel="noopener">
                     <div class="form-icon">📝</div>
-                    <h3>Registration Form</h3>
+                    <h3>Reef Check (GR)</h3>
                     <p>Register for upcoming research events and workshops.</p>
                 </a>
             </div>
@@ -259,7 +275,7 @@
             <h2 class="downloads-title">Protocol Manuals</h2>
             <div class="downloads-grid">
                 <a href="pdf/Manual_for_Protocols_EN.pdf" download class="download-link">
-                    <div class="download-icon">📄</div>
+                    <div class="download-icon">📋</div>
                     <div class="download-text">
                         <h4>English Manual</h4>
                         <p>Protocol manual in English</p>
@@ -267,7 +283,7 @@
                 </a>
                 
                 <a href="pdf/Manual_for_Protocols_GR.pdf" download class="download-link">
-                    <div class="download-icon">📄</div>
+                    <div class="download-icon">📋</div>
                     <div class="download-text">
                         <h4>Greek Manual</h4>
                         <p>Protocol manual in Greek</p>
