@@ -220,10 +220,60 @@
         .download-text h4 {
             font-size: 1.1rem;
             margin-bottom: 5px;
-        }        .download-text p {
+        }
+
+        .download-text p {
             font-size: 0.9rem;
             opacity: 0.9;
-        }        /* Footer Styles */
+        }
+
+        /* Deprecation notice styles (card-like, matching site theme) */
+        .deprecation-notice {
+            background: rgba(197, 226, 243, 0.98);
+            color: #03314b;
+            border-radius: 15px;
+            padding: 20px 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            margin-bottom: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .deprecation-notice .deprecation-message {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .deprecation-notice a {
+            display: inline-block;
+            background: linear-gradient(120deg, #2a7baa 0%, #66d1ea 100%);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(42,123,170,0.18);
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .deprecation-notice {
+                padding: 14px 16px;
+                gap: 8px;
+            }
+
+            .deprecation-notice .deprecation-message {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Footer Styles */
         .footer {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 18px;
@@ -394,8 +444,14 @@
             <div class="banner-content">
                 <h1>Cscience4all</h1>
                 <p>Welcome to our data collection platform</p>
-            </div>        </div>      
-            
+            </div>
+        </div>
+
+        <!-- Deprecation Notice -->
+        <div class="deprecation-notice" role="status" aria-live="polite">
+            <p class="deprecation-message">Sorry for the inconvenience! This version of the site is deprecated. The new version is:</p>
+            <p class="deprecation-message"><a href="https://www.cscience4all-diving.com" target="_blank" rel="noopener"> www.cscience4all-diving.com</a></p>
+        </div>
 
         <!-- Forms Section -->
         <div class="forms-section">
